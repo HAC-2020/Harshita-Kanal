@@ -1,0 +1,25 @@
+  .pink{
+      padding: 10px;
+      width: 200px;
+     color: white; 
+     background-color: #d81b60 ; 
+     font-size:large;
+     font-family: 'Montserrat', sans-serif
+  }
+  .pink:hover{
+       box-shadow: 0 8px 6px -6px gray; 
+    background:#d81b60 radial-gradient(circle, transparent 1%, #d81b60 1%) center/15000%;
+       
+  }
+
+  .top{
+      font-size: 50px;
+  }
+  /* .ripple:hover {
+ 
+}
+.ripple:active {
+  background-color: #6eb9f7;
+  background-size: 100%;
+  transition: background 0s;
+} */
