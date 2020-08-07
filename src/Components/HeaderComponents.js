@@ -42,14 +42,14 @@ class Header extends Component {
                             <Collapse isOpen={this.state.isNavOpen} navbar >
                                 <Nav navbar className="item">
                                     <NavItem active >
-                                        <NavLink href="/note">
+                                        <NavLink href="/Journal">
                                             <span className="fa fa-home fa-lg"></span> Notes </NavLink>
                                     </NavItem>
                                     <NavItem active>
-                                        <NavLink href="/tasks"><span className="fa fa-list fa-lg"></span> Tasks </NavLink>
+                                        <NavLink href="/Tasks"><span className="fa fa-list fa-lg"></span> Tasks </NavLink>
                                     </NavItem>
                                     <NavItem active>
-                                        <NavLink href="/discussions" ><span className="fa fa-info fa-lg"></span> Play </NavLink>
+                                        <NavLink href="/Games" ><span className="fa fa-info fa-lg"></span> Play </NavLink>
                                     </NavItem>
                                     <NavItem active>
                                         <NavLink href="/discussions"  ><span className="fa fa-info fa-lg"></span> Discussion </NavLink>
@@ -74,7 +74,7 @@ class Header extends Component {
                         </div>
                     </Navbar>
                 </React.Fragment>
-            </div>
+             </div>
         )
     }
 }

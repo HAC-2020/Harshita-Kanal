@@ -10,6 +10,15 @@
     padding: 0px;
 }
 
+.note{
+     padding: 8px;
+     border-radius: 20px;
+     color: white; 
+     background-color: #d81b60 ; 
+     font-size:large;
+     font-family: 'Montserrat', sans-serif
+}
+
 .thoughts{
     padding: 20px;
     border-radius: 30px;
