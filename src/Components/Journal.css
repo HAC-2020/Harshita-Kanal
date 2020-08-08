@@ -33,10 +33,10 @@
 
 #tag {
   border-radius: 10px;
-  border: 2px solid #05fdf1;
+  border: 2px solid #fcc2df;
   padding: 4px;
   font-style: italic;
-  background-color: #05fdf1 ;
+  background-color: #fcc2df ;
 
 }
 
@@ -101,7 +101,7 @@ h2 {
 } 
 
 .myitems h3 {
-  background-color: #039be5;
+  background-color: #d81b60;;
   margin: 0;
   color: #fff;
   font-weight: 300;
@@ -114,7 +114,7 @@ h2 {
 
 .myitems p {
   padding: 15px;
-  font-family:'Crete Round', serif ;
+  font-family: 'Montserrat';
   font-size: large;
 }
 
@@ -122,6 +122,7 @@ h2 {
   width: 100%;
   margin-top: 10px;
   background-color: #d81b60;
+
   color: #fff;
   cursor: pointer;
   padding: 18px 22px;
@@ -134,9 +135,9 @@ h2 {
 
 .circle{
 background-color: #d81b60;
+border-color: #d81b60;
 color: #fff;
-border-radius: 20px; 
-font-family: 'Crete Round', serif;
+font-family: 'Montserrat', serif;
 }
 
 .buttonitem {
@@ -150,4 +151,6 @@ font-family: 'Crete Round', serif;
   font-size: 14px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
   padding: 10px 6px;
+  font-family: 'Montserrat', serif;
+
 }

@@ -17,7 +17,10 @@ constructor(props){
     this.state = {
         isModalOpen: false,
         mood: "",
-        typedMood: ""
+        typedMood: "",
+        date: "",
+        time: "",
+        items: []
     }
     this.toggleModal = this.toggleModal.bind(this);
     this.changeMood = this.changeMood.bind(this);
@@ -39,10 +42,24 @@ changeMood(e){
     });
     this.toggleModal();
 
+
 }
 changeTypedMood(e){
+    var d = new Date();
+    var month = d.getMonth() + 1 ;
+    var day = d.getDate() ;
+    var year = d.getFullYear() ;
+    var h = d.getHours();
+    var m = d.getMinutes();
+    var s = d.getSeconds();
+    var time = h + ":" + m + ":" + s;
+    var date = day + '/'+ month + '/' + year
+    console.log(date);
+    console.log(time);
     this.setState({
-        [e.target.name]: e.target.value
+        [e.target.name]: e.target.value,
+        date: date,
+        time: time
     });
     console.log(this.state.typedMood)
 }
@@ -52,13 +69,39 @@ handleSubmit(e){
     const itemsRef = firebase.database().ref('mood');
     const item = {
         typedMood: this.state.typedMood,
+        date: this.state.date,
+        time: this.state.time
     }
     itemsRef.push(item);
     this.setState({
-        typedMood: ''
+        typedMood: '',
+        date: '',
+        time: '', 
+
     });
     
 }
+
+    componentDidMount() {
+        const itemsRef = firebase.database().ref('mood');
+        itemsRef.on('value', (snapshot) => {
+            let items = snapshot.val();
+            let newState = [];
+            for (let item in items) {
+                newState.push({
+                    id: item,
+                    typedMood: items[item].typedMood,
+                    date: items[item].date,
+                    time: items[item].time
+                });
+            }
+            this.setState({
+                items: newState
+            });
+        });
+    }
+
+
 
 
 
@@ -89,16 +132,38 @@ handleSubmit(e){
                             <h2 className = "mt-5">Or</h2>
                         </div> 
                         <div>
-                            <form>
+                           
                                 <Card className = "mb-5">
                                 <CardBody>
                                     <form onSubmit = {this.handleSubmit}>
-                                    <input className="thoughts" type="text" onChange={this.changeTypedMood}  value = "" name= "typedMood" placeholder = "Write your thoughts.. "  /> <br />
+                                    <input className="thoughts" type="text" onChange={this.changeTypedMood}  name= "typedMood" placeholder = "Write your thoughts.. "  /> <br />
                                     <button className="note ripple mt-3"  >Note it!</button>
                                     </form>
                                 </CardBody>
                             </Card>
-                            </form>
+                            <h3>Take note of your emotions!</h3>
+                            <Card>
+                                <CardBody>
+                                <div className='wrapper'>
+
+                                    <ul className="myitems">
+                                        {this.state.items.map((item) => {
+                                            return (
+                                                <li className="myitem" key={item.id}>
+                                                    <h3>{item.typedMood}</h3>
+                                                    <p>when: {item.date}</p>
+                                                    <p>at: <span id="tag">{item.time}</span>       
+                                                    </p>
+                                                </li>
+                                            )
+                                        })}
+                                    </ul>
+
+                                </div>
+                                </CardBody>
+                            </Card>
+
+                           
                         </div>
                     </div>
             </div>

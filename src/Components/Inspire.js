@@ -63,6 +63,7 @@ class Inspire extends Component {
                 />
                 </CardBody>
             </Card>
+           
                 </div>
             </div>
 
