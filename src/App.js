@@ -11,7 +11,12 @@ import Inspire from './Components/Inspire';
 import './App.css';
 import { BrowserRouter } from 'react-router-dom'
 import { Link, Route, Switch } from 'react-router-dom';
+
+
 class App extends Component {
+constructor(props){
+  super(props);
+}
 
   render() {
     return (

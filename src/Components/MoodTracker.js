@@ -7,6 +7,7 @@ import sad from './assets/moderatesad.svg';
 import veryHappy from './assets/veryHappy.svg';
 import worried from './assets/worried.svg';
 import './moodtracker.css';
+import firebase from '../firebase.js'
 
 // timestamp: Date.now()
 
@@ -21,7 +22,7 @@ constructor(props){
     this.toggleModal = this.toggleModal.bind(this);
     this.changeMood = this.changeMood.bind(this);
     this.changeTypedMood = this.changeTypedMood.bind(this);
-
+    this.handleSubmit = this.handleSubmit.bind(this);
 }  
 
 toggleModal() {
@@ -45,6 +46,21 @@ changeTypedMood(e){
     });
     console.log(this.state.typedMood)
 }
+
+handleSubmit(e){
+    e.preventDefault();
+    const itemsRef = firebase.database().ref('mood');
+    const item = {
+        typedMood: this.state.typedMood,
+    }
+    itemsRef.push(item);
+    this.setState({
+        typedMood: ''
+    });
+    
+}
+
+
 
     render() {
         const str = new Date();
@@ -76,8 +92,10 @@ changeTypedMood(e){
                             <form>
                                 <Card className = "mb-5">
                                 <CardBody>
-                                    <input className="thoughts" type="text" onChange={this.changeTypedMood}  name= "typedMood" placeholder = "Write your thoughts.. "  /> <br />
-                                    <button className="note ripple mt-3" >Note it!</button>
+                                    <form onSubmit = {this.handleSubmit}>
+                                    <input className="thoughts" type="text" onChange={this.changeTypedMood}  value = "" name= "typedMood" placeholder = "Write your thoughts.. "  /> <br />
+                                    <button className="note ripple mt-3"  >Note it!</button>
+                                    </form>
                                 </CardBody>
                             </Card>
                             </form>
