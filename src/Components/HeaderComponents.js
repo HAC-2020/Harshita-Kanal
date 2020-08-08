@@ -57,6 +57,9 @@ class Header extends Component {
                                      <NavItem active>
                                         <NavLink href="/Mood"  ><span className="fa fa-info fa-lg"></span> MoodTracker </NavLink>
                                     </NavItem>
+                                      <NavItem active>
+                                        <NavLink href="/Inspire"  ><span className="fa fa-info fa-lg"></span> Inspire </NavLink>
+                                    </NavItem>
 
                                 </Nav>
 

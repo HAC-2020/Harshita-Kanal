@@ -7,6 +7,7 @@ import Journal from './Components/Journal';
 import Tasks from './Components/Tasks';
 import Playgame from './Components/Playgame';
 import Discuss from './Components/Discuss';
+import Inspire from './Components/Inspire';
 import './App.css';
 import { BrowserRouter } from 'react-router-dom'
 import { Link, Route, Switch } from 'react-router-dom';
@@ -37,6 +38,10 @@ class App extends Component {
             <Route
               path="/discussions"
               component={Discuss}
+            />
+            <Route
+              path="/Inspire"
+              component={Inspire}
             />
             <Route
               path=""
