@@ -21,12 +21,12 @@ class QuoteAndAuthor extends Component {
                 </div>
                 <button
                     style={{ backgroundColor: randomColor,
-                    color: "white" }}
+                    color: "white", padding: "8px", fontFamily: "Montserrat", borderRadius: "20px" }}
                     id="newquote"
                     onClick={this.props.handleClick}
                 >
                     New quote
-        </button>
+                </button>
             </div>
             </div>
         );

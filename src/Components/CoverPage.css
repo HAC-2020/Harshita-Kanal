@@ -15,6 +15,20 @@
   .top{
       font-size: 50px;
   }
+
+  .red{
+    padding: 10px;
+     color: white; 
+     background-color: #d81b60 ; 
+     font-size:large;
+     font-family: 'Montserrat', sans-serif;
+     border-radius: 20px;
+  }
+
+  .red:hover{
+    box-shadow: 0 8px 6px -6px gray; 
+    background:#d81b60 radial-gradient(circle, transparent 1%, #d81b60 1%) center/15000%;
+  }
   /* .ripple:hover {
  
 }
