@@ -45,5 +45,12 @@ A random quote generator to give you the daily dose of motivation!
 ### Challenges I ran into
 Structuring the firebase realtime database, analysis of components helped me structure the database correctly.
 
+### Running the project :run:
+* Clone the repository and go to that directory.
+* Install Yarn
+* Run yarn install
+* Run yarn start
+* View it on http://localhost:3000
+
 ### Pitch
 This product can also be used by mental health practitioners as an assistive technology.
