@@ -1,0 +1,82 @@
+form, table {
+     display:inline;
+     margin:8px;
+     padding:0px;
+}
+
+.user-profile {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+}
+
+.user-profile img {
+  border-radius: 50%;
+  max-width: 100%;
+}
+
+.login{
+   min-width: 88px;
+  background-color: crimson;
+  cursor: pointer;
+  border: 0;
+  min-width: 120px;
+  color: #fff;
+  font-size: 14px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  padding: 10px 6px;
+  border-radius: 10px;
+  text-align: center;
+}
+.addit{
+ 
+  min-width: 88px;
+  background-color: crimson;
+  cursor: pointer;
+  border: 0;
+  min-width: 120px;
+  color: #fff;
+  font-size: 14px;
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+  padding: 10px 6px;
+  border-radius: 10px;
+  text-align: center;
+  margin-left: 0px;
+
+}
+
+
+.myitems h3 {
+  background-color: #d81b60;;
+  margin: 0;
+  color: #fff;
+  font-weight: 300;
+  padding: 15px;
+  font-family: montserrat;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+
+.myitems p {
+  padding: 15px;
+  font-family: 'Montserrat';
+  font-size: large;
+}
+
+.formbutton {
+  width: 100%;
+  margin-top: 10px;
+  background-color: #d81b60;
+  color: #fff;
+  cursor: pointer;
+  padding: 18px 22px;
+  font-size: 16px;
+  border: 0;
+  border-radius: 10px;
+  display: block;
+  width: 100%;  
+}

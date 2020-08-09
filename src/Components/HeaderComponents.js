@@ -5,7 +5,7 @@ import {
 } from 'reactstrap';
 import { Collapse } from 'reactstrap';
 import './header.css';
-
+import firebase, { auth, provider } from '../firebase.js'
 
 class Header extends Component {
     constructor(props) {
@@ -66,10 +66,14 @@ class Header extends Component {
                                 <Nav className="ml-auto" navbar>
 
                                     <NavItem>
-                                      
-                                    
-                                        <NavLink active   ><span className="fa fa-info fa-lg"></span> Login </NavLink>
-                                          
+                                        {
+                                            this.props.user ?
+
+                                            <button className = "circle" onClick =  {this.props.logout} > Logout </button>
+                                            :
+                                            <button  className = "circle" onClick =  {this.props.login} > Login </button>
+
+                                        }                                                                                
                                         
                                     </NavItem>
                                 </Nav>
