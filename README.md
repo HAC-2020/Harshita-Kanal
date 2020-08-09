@@ -1,6 +1,6 @@
 
 # *__Mental-Aid__*
-*__A web app to help people with special mental needs especially in recent times of uncertainity.__*<br>
+*__A web app to help people with special mental needs especially in recent times of uncertainty.__*<br>
 
 
 Video Demo: https://youtu.be/38-wMch4Mr8
