@@ -133,6 +133,10 @@ h2 {
   width: 100%;  
 }
 
+.warning{
+  color : #d81b60;
+}
+
 .circle{
 background-color: #d81b60;
 border-color: #d81b60;

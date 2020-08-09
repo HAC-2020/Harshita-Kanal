@@ -70,14 +70,16 @@ handleSubmit(e){
     const item = {
         typedMood: this.state.typedMood,
         date: this.state.date,
-        time: this.state.time
+        time: this.state.time,
+        user: this.props.user ? this.props.user.displayName || this.props.user.email : ''
+
     }
     itemsRef.push(item);
     this.setState({
         typedMood: '',
         date: '',
         time: '', 
-
+      
     });
     
 }
@@ -92,7 +94,8 @@ handleSubmit(e){
                     id: item,
                     typedMood: items[item].typedMood,
                     date: items[item].date,
-                    time: items[item].time
+                    time: items[item].time,
+                    user: items[item].user
                 });
             }
             this.setState({
@@ -137,17 +140,24 @@ handleSubmit(e){
                                 <CardBody>
                                     <form onSubmit = {this.handleSubmit}>
                                     <input className="thoughts" type="text" onChange={this.changeTypedMood}  name= "typedMood" placeholder = "Write your thoughts.. "  /> <br />
-                                    <button className="note ripple mt-3"  >Note it!</button>
+                                    {/* <button className="note ripple mt-3"  >Note it!</button> */}
+                                    {
+                                        this.props.user ?
+                                            <button className="note ripple mt-3">Add task</button> :
+                                            <h3 className="warning mt-3">Login to add</h3>
+                                    }
                                     </form>
                                 </CardBody>
                             </Card>
-                            <h3>Take note of your emotions!</h3>
-                            <Card>
+                            <h3 className = "mb-3">Take note of your emotions!</h3>
+                            <Card className = "mb-3">
                                 <CardBody>
                                 <div className='wrapper'>
 
                                     <ul className="myitems">
                                         {this.state.items.map((item) => {
+                                            if (this.props.user)
+                                                if (item.user === this.props.user.displayName || item.user === this.props.user.email)
                                             return (
                                                 <li className="myitem" key={item.id}>
                                                     <h3>{item.typedMood}</h3>
@@ -156,6 +166,11 @@ handleSubmit(e){
                                                     </p>
                                                 </li>
                                             )
+                                            else
+
+                                             return (
+                                            <div key={item.id}></div>
+                                                )
                                         })}
                                     </ul>
 
