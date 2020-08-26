@@ -20,7 +20,7 @@ development of Mental-Aid: A web application to help people with special mental 
 *__Module Wise Description__* <br>
 
 `Module 1:` <br>
-People who suffer from ailments like ADHD find it difficult to organize themselves and maintain important ideas or notes, <br>the first modeule, helps them to set-up notes, and access them whenever required.<br>
+People who suffer from ailments like ADHD find it difficult to organize themselves and maintain important ideas or notes, <br>the first module, helps them to set-up notes, and access them whenever required.<br>
 
 `Module 2:` <br>
 The second module is a task manager, to setup tasks which are displayed in the standard workboard manner, making them easy to remember.<br>
